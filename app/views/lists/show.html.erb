@@ -1,0 +1,19 @@
+<%= render 'shared/navbar' %>
+<%= render 'shared/list_banner' %>
+<div class="container">
+  <% movies = @list.movies %>
+  <% bookmarks = @list.bookmarks %>
+    <div class="row justify-content-around">
+      <% bookmarks.each do |bookmark| %>
+      <%= render "shared/movie_card", bookmark: bookmark %>
+      <% end %>
+    </div>
+  <br>
+  <%= link_to "Add a bookmark", new_list_bookmark_path(@list.id), class:"btn btn-primary" %>
+</div>
+
+
+
+        <%# <li><%= "#{bookmark.movie.title} - #{bookmark.movie.overview}" %>
+       <%# < <%= link_to "Delete movie", bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+      <%# <% end %>
