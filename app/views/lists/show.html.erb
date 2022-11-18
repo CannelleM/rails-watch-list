@@ -1,5 +1,5 @@
 <%= render 'shared/navbar' %>
-<%= render 'shared/list_banner' %>
+<%= render 'shared/list_banner', list: @list %>
 <div class="container">
   <% movies = @list.movies %>
   <% bookmarks = @list.bookmarks %>
